@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fato ou Fake - 10 Flashcards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef2f3;
+            color: #333;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h1 .fato { color: #22c55e; }
+        h1 .fake { color: #ef4444; }
+
+        p.subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .flashcard {
+            background-color: transparent;
+            width: 100%;
+            height: 340px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.06);
+            border-radius: 20px;
+        }
+
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 20px;
+            border-radius: 20px;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+            color: #1e293b;
+            border-bottom: 8px solid #ef4444;
+        }
+
+        .badge-fake {
+            background-color: #fee2e2;
+            color: #ef4444;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .card-front p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #334155;
+        }
+
+        .card-back {
+            background-color: #ffffff;
+            color: #1e293b;
+            transform: rotateY(180deg);
+            border-bottom: 8px solid #22c55e;
+        }
+
+        .badge-fato {
+            background-color: #dcfce7;
+            color: #22c55e;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .card-back p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .card-img {
+            width: 44px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #e2e8f0; /* Fundo cinza enquanto não tem imagem */
+        }
+
+        .card-hint {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><span class="fato">Fato</span> ou <span class="fake">Fake</span></h1>
+        <p class="subtitle">Passe o mouse por cima do cartão para virar!</p>
+    </header>
+
+    <div class="container">
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Morcego">
+                    <p>Os morcegos são totalmente cegos.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Eles enxergam bem, mas usam o som para caçar no escuro.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Sol">
+                    <p>O Sol é uma grande bola de fogo.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Ele não tem fogo; é uma esfera de gás brilhante e muito quente.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Peixe">
+                    <p>Os peixes de aquário têm memória de apenas 3 segundos.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Eles têm boa memória e conseguem lembrar de coisas por meses.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Camelo">
+                    <p>Os camelos guardam água dentro das suas corcovas.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Elas não guardam água, mas sim gordura para dar energia.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Touro">
+                    <p>Os touros ficam furiosos com a cor vermelha.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Eles não enxergam o vermelho; o que os irrita é o movimento do pano.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Camaleão">
+                    <p>Os camaleões mudam de cor apenas para se camuflar.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Eles mudam de cor principalmente para expressar humor e regular a temperatura.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Tomate">
+                    <p>O tomate é um legume.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>O tomate nasce de uma flor e tem sementes, por isso é uma fruta.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Cérebro">
+                    <p>Nós usamos apenas 10% da capacidade do nosso cérebro.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Nós usamos praticamente 100% do cérebro ativo ao longo do dia.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Chiclete">
+                    <p>Os chicletes engolidos ficam grudados por 7 anos.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Ele não é digerido, mas passa direto e é eliminado em poucos dias.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="card-front">
+                    <span class="badge-fake">❌ MENTIRA</span>
+                    <img class="card-img" src="COLOQUE_A_IMAGEM_AQUI" alt="Muralha">
+                    <p>A Muralha da China é visível do espaço a olho nu.</p>
+                    <span class="card-hint">Virar Cartão</span>
+                </div>
+                <div class="card-back">
+                    <span class="badge-fato">✅ A VERDADE</span>
+                    <p>Ela é muito estreita e se mistura com a natureza, não dando para ver a olho nu.</p>
+                    <span class="card-hint">Voltar</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
